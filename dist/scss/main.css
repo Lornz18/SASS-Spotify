@@ -1,0 +1,254 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: hsl(0, 0%, 20%);
+}
+
+ul {
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.container {
+  max-width: 140rem;
+  padding: 1.5rem;
+  margin: 0 auto;
+}
+
+.header {
+  background: hsl(0, 0%, 20%);
+  position: relative;
+  position: fixed;
+  width: 100%;
+}
+.header .blur {
+  height: 100vh;
+  width: 20%;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 100rem;
+  z-index: 999;
+  transition: 0.5s ease;
+}
+.header .blur.open {
+  left: 0rem;
+  transition: 0.5s ease;
+}
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .branding img {
+  width: 10rem;
+}
+.header__nav {
+  position: absolute;
+  top: 0;
+  background: hsl(0, 0%, 20%);
+  height: 100vh;
+  width: 80%;
+  right: -100rem;
+  transition: 0.5s ease;
+}
+.header__nav.open {
+  right: 0;
+  transition: 0.5s ease;
+}
+.header__nav img {
+  width: 10rem;
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+}
+.header__nav ul span {
+  width: 3rem;
+  height: 0.3rem;
+  background-color: hsl(0, 0%, 100%);
+  display: block;
+  margin-left: 2rem;
+}
+.header__nav ul li {
+  padding: 2rem 0rem 2rem 2rem;
+  cursor: pointer;
+}
+.header__nav ul li a {
+  color: hsl(0, 0%, 100%);
+  font-size: 3rem;
+  font-weight: 800;
+}
+.header__nav ul li:hover a {
+  color: #1DB954;
+}
+.header__nav ul li.btn a {
+  font-size: 2rem;
+}
+.header .toggle__menu {
+  z-index: 999;
+}
+.header .toggle__menu span {
+  width: 3rem;
+  height: 0.2rem;
+  background-color: hsl(0, 0%, 100%);
+  display: block;
+  border-radius: 5rem;
+}
+.header .toggle__menu span:nth-child(2) {
+  margin: 0.3rem 0;
+}
+.header .toggle__menu.open span:first-child {
+  transform: translate(0, 8px) rotate(225deg);
+  transition: 0.5s ease;
+}
+.header .toggle__menu.open span:nth-child(2) {
+  opacity: 0;
+  transition: 0.5s ease;
+}
+.header .toggle__menu.open span:last-child {
+  transform: translate(0, -3px) rotate(-225deg);
+  transition: 0.5s ease;
+}
+@media screen and (min-width: 1080px) {
+  .header .toggle__menu {
+    display: none;
+  }
+  .header .blur {
+    display: none;
+  }
+  .header__nav {
+    position: unset;
+    background: transparent;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .header__nav img {
+    display: none;
+  }
+  .header__nav ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .header__nav ul span {
+    transform: rotate(90deg);
+    margin-left: 0;
+    width: 2.5rem;
+  }
+  .header__nav ul li {
+    padding: 0;
+  }
+  .header__nav ul li a {
+    font-size: 2rem;
+    font-weight: 600rem;
+  }
+}
+
+.banner {
+  background: rgb(176, 40, 151);
+  padding: 7rem 0;
+}
+.banner__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.banner__wrapper img {
+  width: 65%;
+}
+.banner__text {
+  color: hsl(0, 0%, 100%);
+}
+.banner__text h1 {
+  margin-top: 2rem;
+  font-size: 3rem;
+}
+.banner__text h4 {
+  font-size: 1.9rem;
+  margin: 3rem 0;
+}
+.banner__text p {
+  font-size: 1.2rem;
+  margin: 2rem 0;
+}
+.banner__text a {
+  color: hsl(0, 0%, 100%);
+  text-decoration: underline;
+}
+.banner__btn {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem 0;
+}
+.banner__btn a {
+  text-decoration: none;
+  color: hsl(0, 0%, 100%);
+  font-weight: 800;
+  background: hsl(0, 0%, 20%);
+  border: 2px solid hsl(0, 0%, 20%);
+  border-radius: 5rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+}
+.banner__btn a:last-child {
+  background: transparent;
+  border: 2px solid hsl(0, 0%, 100%);
+}
+.banner__btn a:hover {
+  transform: scale(105%);
+}
+.banner__btn a:hover:last-child {
+  background: rgba(0, 0, 0, 0.3);
+}
+@media screen and (min-width: 1080px) {
+  .banner__wrapper {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  .banner__wrapper img {
+    margin-right: 3rem;
+    width: 32%;
+  }
+  .banner__text {
+    width: 100%;
+  }
+  .banner__text h1 {
+    width: 85%;
+    font-size: 5rem;
+  }
+  .banner__text h4 {
+    width: 100%;
+    font-size: 2.5rem;
+  }
+  .banner__text p {
+    width: 75%;
+  }
+  .banner__btn {
+    flex-direction: row;
+    justify-content: left;
+    gap: 1.5rem;
+  }
+  .banner__btn a {
+    width: 18%;
+  }
+}/*# sourceMappingURL=main.css.map */
