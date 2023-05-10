@@ -1,0 +1,55 @@
+.footer{
+    background: $clr-dark;
+    padding-bottom: 5rem;
+    &__wrapper{
+        h5{
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: flex-end;
+            a{
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                color: gray;
+                &:hover{
+                    color: $clr-green;
+                }
+            }
+        }
+    }
+    &__content{
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        ul{
+            display: flex;
+            align-items: center;
+            max-width: 30rem;
+            flex-wrap: wrap;
+            gap: 2rem;
+            li{
+                a{
+                    color: gray;
+                    font-size: 1.1rem;
+                    &:hover{
+                        color: $clr-green;
+                    }
+                }
+            }
+        }
+        p{
+            color: gray;
+            font-size: 1.1rem;
+        }
+    }
+
+
+
+    @include mediaQuery($break-sm){
+        &__content{
+            ul{
+                max-width: 40rem;
+            }
+        }
+    }
+}
